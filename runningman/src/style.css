@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to top, #a1c4fd, #c2e9fb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.center-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+.animation-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 150px;
+  overflow: hidden;
+}
+
+/* Runner & Creature */
+.runner, .creature {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+}
+
+/* Default animations */
+.runner {
+  animation: runAcross 6s linear infinite;
+}
+
+.creature {
+  position: absolute;
+  bottom: 0;
+  left: -200px; /* was -150px before */
+  height: 100px;
+  animation: creatureChase 6s linear infinite;
+  animation-delay: 0.5s;
+}
+
+/* Fast animations */
+@keyframes runAcrossFast {
+  0% { left: -200px; }
+  100% { left: 100vw; }
+}
+
+@keyframes creatureChaseFast {
+  0% { left: -200px; }
+  100% { left: 100vw; }
+}
+
+/* Default slow animations */
+@keyframes runAcross {
+  0% { left: -200px; }
+  100% { left: 100vw; }
+}
+
+@keyframes creatureChase {
+  0% { left: -200px; }
+  100% { left: 100vw; }
+}
